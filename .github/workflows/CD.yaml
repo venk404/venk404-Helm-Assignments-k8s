@@ -18,8 +18,8 @@ jobs:
       run: |
         # Install yq if not already available on the runner
         if ! command -v yq &> /dev/null; then
-          wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
-          chmod a+x /usr/local/bin/yq
+          sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
+          sudo chmod a+x /usr/local/bin/yq
         fi
         
         # Update the image tag in the values file (with corrected path)
