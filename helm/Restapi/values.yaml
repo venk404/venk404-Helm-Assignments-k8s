@@ -7,7 +7,7 @@ application:
   secretName: dev-db
   image:
     repository: venkateshtangaraj/studentapi
-    tag: c71406cf3ded3565325f078e53c908388dd69015
+    tag: 802428e363f590688011f8853f70f983e7e2f111
   migration:
     image:
       repository: venkateshtangaraj/db_migration
