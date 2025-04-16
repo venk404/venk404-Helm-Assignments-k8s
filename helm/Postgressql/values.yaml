@@ -20,4 +20,4 @@ postgres:
     host: postgres-svc
     port: 5432
   nodeSelector:
-    type: application
+    type: database
