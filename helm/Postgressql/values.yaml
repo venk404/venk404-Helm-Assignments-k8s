@@ -13,7 +13,7 @@ postgres:
       memory: "512Mi"
       cpu: "500m"
   storage:
-    size: 1Gi
+    size: 3Gi
     storageClass: manual
     hostPath: /data/postgres-pv
   postgresql:
