@@ -7,7 +7,7 @@ application:
   secretName: dev-db
   image:
     repository: venkateshtangaraj/studentapi
-    tag: v1.0.0
+    tag: d545a74c3f2e533ce8be69f0c0cd2a044c90d85f
   migration:
     image:
       repository: venkateshtangaraj/db_migration
@@ -21,4 +21,3 @@ application:
     port: 5432
   nodeSelector:
     type: application
-
