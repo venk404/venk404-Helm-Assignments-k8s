@@ -7,10 +7,10 @@ postgres:
   serviceName: postgres
   resources:
     requests:
-      memory: "256Mi"
+      memory: "2Gi"
       cpu: "250m"
     limits:
-      memory: "512Mi"
+      memory: "3Gi"
       cpu: "500m"
   storage:
     size: 3Gi
