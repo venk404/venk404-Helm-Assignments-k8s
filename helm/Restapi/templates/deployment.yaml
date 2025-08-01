@@ -45,7 +45,7 @@ spec:
               key: port
       initContainers:
       - name: migration
-        image: "{{ .Values.application.migration.image.repository }}:{{ .Values.application.migration.image.tag }}"
+        image: "{{ .Values.application.migration.image.repository }}:v{{ .Values.application.migration.image.tag }}"
         envFrom:
         - secretRef:
             name: dev-db
