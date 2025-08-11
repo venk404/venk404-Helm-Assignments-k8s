@@ -69,7 +69,8 @@ vi values.yaml
 ```bash
 helm install external-secrets-operator ./External-secrets/external-secrets/ -n external-secrets --create-namespace
 # Wait until pods get started
-helm install external-secrets-operator ./External-secrets/external-secrets-cr/ -n external-secrets --create-namespace
+helm install external-secrets-cr ./External-secrets/external-secrets-cr/ -n external-secrets
+
 kubectl get pods -owide -A
 ```
 
