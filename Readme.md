@@ -16,7 +16,7 @@ We need to create Helm charts for our REST API and its dependent services. We ca
 
 ### 1) Clone and Navigate:  
 ```bash
-git clone https://github.com/venk404/SRE--RestAPI.git
+git clone https://github.com/venk404/venk404-Helm-Assignments-k8s.git
 cd "Assignment 8"
 cd helm/charts 
 ```
