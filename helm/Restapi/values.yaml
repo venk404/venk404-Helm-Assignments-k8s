@@ -7,11 +7,11 @@ application:
   secretName: dev-db
   image:
     repository: venkateshtangaraj/studentapi
-    tag: 1.0.0
+    tag: 1.0.1
   migration:
     image:
       repository: venkateshtangaraj/db_migration
-      tag: 1.0.0
+      tag: 1.0.1
   service:
     type: NodePort
     port: 8080
