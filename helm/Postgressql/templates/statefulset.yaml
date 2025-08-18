@@ -1,11 +1,12 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
-  name: postgres-deployment
+  name: postgres
   namespace: {{ .Values.namespace }}
   labels:
     {{- include "db.labels" . | nindent 4 }}
 spec:
+  serviceName: {{ .Values.postgres.serviceName }}-svc
   replicas: 1
   selector:
     matchLabels:
@@ -33,7 +34,13 @@ spec:
         volumeMounts:
         - name: postgres-storage
           mountPath: /var/lib/postgresql/data
-      volumes:
-      - name: postgres-storage
-        persistentVolumeClaim:
-          claimName: {{ .Release.Name }}-pvc
+  volumeClaimTemplates:
+  - metadata:
+      name: postgres-storage
+    spec:
+      storageClassName: {{ .Values.postgres.storage.storageClass }}
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: {{ .Values.postgres.storage.size }}

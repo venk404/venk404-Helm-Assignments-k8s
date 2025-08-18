@@ -3,10 +3,15 @@ kind: Service
 metadata:
   name: {{ .Values.postgres.serviceName }}-svc
   namespace: {{ .Values.namespace }}
+  labels:
+    {{- include "db.labels" . | nindent 4 }}
 spec:
+  type: ClusterIP
+  clusterIP: None
   selector:
     {{- include "db.labels" . | nindent 4 }}
   ports:
     - protocol: TCP
-      port: 5432
+      port: {{ .Values.postgres.postgresql.port }}
       targetPort: 5432
+      name: postgres
