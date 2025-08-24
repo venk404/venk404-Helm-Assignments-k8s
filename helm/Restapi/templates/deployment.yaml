@@ -46,17 +46,37 @@ spec:
       initContainers:
       - name: migration
         image: "{{ .Values.application.migration.image.repository }}:v{{ .Values.application.migration.image.tag }}"
-        envFrom:
-        - secretRef:
-            name: dev-db
         env:
-        - name: POSTGRES_PORT
-          valueFrom:
-            configMapKeyRef:
-              name: {{ .Values.application.configname }}-config
-              key: postgres_port
-        - name: POSTGRES_HOST
+        - name: PYWAY_TYPE
+          value: "{{ .Values.application.migration.pyway.type }}"
+        - name: PYWAY_TABLE
+          value: "{{ .Values.application.migration.pyway.table }}"
+        - name: PYWAY_DATABASE_MIGRATION_DIR
+          value: "{{ .Values.application.migration.pyway.migrationDir }}"
+        - name: PYWAY_DATABASE_HOST
           valueFrom:
             configMapKeyRef:
               name: {{ .Values.application.configname }}-config
               key: postgres_host
+        - name: PYWAY_DATABASE_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: {{ .Values.application.configname }}-config
+              key: postgres_port
+        - name: PYWAY_DATABASE_NAME
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.application.secretName }}
+              key: POSTGRES_DB
+        - name: PYWAY_DATABASE_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.application.secretName }}
+              key: POSTGRES_USER
+        - name: PYWAY_DATABASE_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.application.secretName }}
+              key: POSTGRES_PASSWORD
+        command: {{ .Values.application.migration.command | toJson }}
+        args: {{ .Values.application.migration.args | toJson }}

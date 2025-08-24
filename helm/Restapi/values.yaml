@@ -10,8 +10,17 @@ application:
     tag: 1.0.1
   migration:
     image:
-      repository: venkateshtangaraj/db_migration
+      repository: venkateshtangaraj/studentapi
       tag: 1.0.1
+    pyway:
+      type: postgres
+      table: pyway_schema_history
+      migrationDir: /app/migrations
+    command: 
+      - "sh"
+      - "-c"
+    args: 
+      - "pyway migrate"
   service:
     type: NodePort
     port: 8080
