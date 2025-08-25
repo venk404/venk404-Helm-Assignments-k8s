@@ -1,6 +1,6 @@
 namespace: student-api
 postgres:
-  Name: postgres
+  Name: postgres-statefulSet
   image: postgres:17.3
   port: 8002
   secretName: dev-db
