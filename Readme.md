@@ -91,5 +91,3 @@ http://127.0.0.1:30007/docs
 
 ---
 
-## Conclusion  
-All expectations were met, though the approach may not have been ideal, but it still works.
