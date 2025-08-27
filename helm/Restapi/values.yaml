@@ -11,7 +11,7 @@ application:
   migration:
     image:
       repository: venkateshtangaraj/studentapi
-      tag: 1.0.1
+      tag: v1.0.1
     pyway:
       type: postgres
       table: pyway_schema_history
