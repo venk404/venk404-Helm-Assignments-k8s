@@ -18,7 +18,7 @@ We need to create Helm charts for our REST API and its dependent services. We ca
 ```bash
 git clone https://github.com/venk404/venk404-Helm-Assignments-k8s.git
 cd "Assignment 8"
-cd helm/charts 
+cd helm
 ```
 
 ### 2) Setup Helm Releases  
@@ -89,5 +89,12 @@ helm install restapi ./Restapi/ -n student-api --create-namespace
 http://127.0.0.1:30007/docs
 ```
 
----
+## Conclusions
 
+All the expectations have been met for **Milestone 8**:
+
+- ✅ Helm charts created for REST API and dependent services.  
+- ✅ Helm directory structured properly in the GitHub repository.  
+- ✅ Community-managed charts for DB and Vault included and usable.  
+- ✅ Entire stack deployed using Helm charts instead of raw manifests.  
+- ✅ README updated with instructions for Helm-based deployment.  
