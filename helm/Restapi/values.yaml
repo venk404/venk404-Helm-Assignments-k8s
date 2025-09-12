@@ -3,7 +3,7 @@ application:
   replicaCount: 1
   name: restapi
   port: 8002
-  configname: postgres-statefulset-config
+  configname: postgres-statefulset
   secretName: dev-db
   image:
     repository: venkateshtangaraj/studentapi
