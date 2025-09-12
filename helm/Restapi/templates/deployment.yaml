@@ -21,7 +21,7 @@ spec:
       {{- end }}
       containers:
       - name: {{ .Values.application.name }}
-        image: "{{ .Values.application.image.repository }}:v{{ .Values.application.image.tag }}"
+        image: "{{ .Values.application.image.repository }}:{{ .Values.application.image.tag }}"
         ports:
         - containerPort: {{ .Values.application.port }}
         envFrom:
@@ -45,7 +45,7 @@ spec:
               key: port
       initContainers:
       - name: migration
-        image: "{{ .Values.application.migration.image.repository }}:v{{ .Values.application.migration.image.tag }}"
+        image: "{{ .Values.application.migration.image.repository }}:{{ .Values.application.migration.image.tag }}"
         env:
         - name: PYWAY_TYPE
           value: "{{ .Values.application.migration.pyway.type }}"
